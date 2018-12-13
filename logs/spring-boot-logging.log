@@ -1,0 +1,329 @@
+2018/12/08-14:12 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- Starting SpringbootvueempApplication on PC-20180810PAHZ with PID 8604 (D:\IDEA\IDEASpace\springbootvueemp\target\classes started by Administrator in D:\IDEA\IDEASpace\springbootvueemp)
+2018/12/08-14:12 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- No active profile set, falling back to default profiles: default
+2018/12/08-14:12 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor- Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018/12/08-14:12 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor- For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018/12/08-14:12 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2018/12/08-14:12 [restartedMain] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2018/12/08-14:12 [restartedMain] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet Engine: Apache Tomcat/9.0.13
+2018/12/08-14:12 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener- The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\jdk1.8\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\app\Administrator\product\11.1.0\db_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;E:\jdk1.7\bin;E:\Program Files\TortoiseSVN\bin;E:\Program Files\VisualSVN Server\bin\;D:\Bin;E:\软件\Dict;E:\ZYH\Maven\apache-maven-3.3.9\bin;D:\命令行打开应用程序;.]
+2018/12/08-14:12 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2018/12/08-14:12 [restartedMain] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1872 ms
+2018/12/08-14:12 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2018/12/08-14:12 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer- LiveReload server is running on port 35729
+2018/12/08-14:12 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2018/12/08-14:12 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- Started SpringbootvueempApplication in 3.339 seconds (JVM running for 7.885)
+2018/12/08-14:13 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018/12/08-14:13 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2018/12/08-14:13 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 15 ms
+2018/12/08-14:13 [http-nio-8080-exec-4] INFO  com.alibaba.druid.pool.DruidDataSource- {dataSource-1} inited
+2018/12/08-14:13 [http-nio-8080-exec-4] DEBUG com.aaa.dao.UserInfoDao.findAllUser- ==>  Preparing: select empno,ename,job,mgr,hiredate,sal,comm,deptno from emp 
+2018/12/08-14:13 [http-nio-8080-exec-4] DEBUG com.aaa.dao.UserInfoDao.findAllUser- ==> Parameters: 
+2018/12/08-14:13 [http-nio-8080-exec-4] DEBUG com.aaa.dao.UserInfoDao.findAllUser- <==      Total: 2
+2018/12/08-14:14 [http-nio-8080-exec-8] DEBUG com.aaa.dao.UserInfoDao.addUser- ==>  Preparing: insert into dept values(null,?,?,?,?,?,?,?) 
+2018/12/08-14:14 [http-nio-8080-exec-8] DEBUG com.aaa.dao.UserInfoDao.addUser- ==> Parameters: wangwu(String), 经理(String), 1(Integer), 2018-11-08 00:00:00.0(Timestamp), 3000(Integer), 3000(Integer), 1(Integer)
+2018/12/08-14:14 [http-nio-8080-exec-8] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet]- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLException: Column count doesn't match value count at row 1
+### The error may involve com.aaa.dao.UserInfoDao.addUser-Inline
+### The error occurred while setting parameters
+### SQL: insert into dept values(null,?,?,?,?,?,?,?)
+### Cause: java.sql.SQLException: Column count doesn't match value count at row 1
+; bad SQL grammar []; nested exception is java.sql.SQLException: Column count doesn't match value count at row 1] with root cause
+java.sql.SQLException: Column count doesn't match value count at row 1
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1055)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:956)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3491)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3423)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1936)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2060)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2542)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1734)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:995)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:493)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy71.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy60.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:58)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy61.addUser(Unknown Source)
+	at com.aaa.service.impl.UserInfoImpl.addUser(UserInfoImpl.java:39)
+	at com.aaa.controller.DeptInfoController.addUser(DeptInfoController.java:33)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:791)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018/12/08-14:16 [http-nio-8080-exec-3] DEBUG com.aaa.dao.UserInfoDao.addUser- ==>  Preparing: insert into dept values(null,?,?,?,?,?,?,?) 
+2018/12/08-14:16 [http-nio-8080-exec-3] DEBUG com.aaa.dao.UserInfoDao.addUser- ==> Parameters: wangwu(String), jingli(String), 1(Integer), 2018-11-08 00:00:00.0(Timestamp), 3000(Integer), 3000(Integer), 1(Integer)
+2018/12/08-14:16 [http-nio-8080-exec-3] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet]- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLException: Column count doesn't match value count at row 1
+### The error may involve com.aaa.dao.UserInfoDao.addUser-Inline
+### The error occurred while setting parameters
+### SQL: insert into dept values(null,?,?,?,?,?,?,?)
+### Cause: java.sql.SQLException: Column count doesn't match value count at row 1
+; bad SQL grammar []; nested exception is java.sql.SQLException: Column count doesn't match value count at row 1] with root cause
+java.sql.SQLException: Column count doesn't match value count at row 1
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1055)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:956)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3491)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3423)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1936)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2060)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2542)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1734)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:995)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:493)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy71.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy60.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:58)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy61.addUser(Unknown Source)
+	at com.aaa.service.impl.UserInfoImpl.addUser(UserInfoImpl.java:39)
+	at com.aaa.controller.DeptInfoController.addUser(DeptInfoController.java:33)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:791)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018/12/08-14:17 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- Starting SpringbootvueempApplication on PC-20180810PAHZ with PID 8244 (D:\IDEA\IDEASpace\springbootvueemp\target\classes started by Administrator in D:\IDEA\IDEASpace\springbootvueemp)
+2018/12/08-14:17 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- No active profile set, falling back to default profiles: default
+2018/12/08-14:17 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor- Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018/12/08-14:17 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor- For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018/12/08-14:17 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2018/12/08-14:17 [restartedMain] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2018/12/08-14:17 [restartedMain] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet Engine: Apache Tomcat/9.0.13
+2018/12/08-14:17 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener- The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\jdk1.8\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\app\Administrator\product\11.1.0\db_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;E:\jdk1.7\bin;E:\Program Files\TortoiseSVN\bin;E:\Program Files\VisualSVN Server\bin\;D:\Bin;E:\软件\Dict;E:\ZYH\Maven\apache-maven-3.3.9\bin;D:\命令行打开应用程序;.]
+2018/12/08-14:17 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2018/12/08-14:17 [restartedMain] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1575 ms
+2018/12/08-14:17 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2018/12/08-14:17 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer- LiveReload server is running on port 35729
+2018/12/08-14:17 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2018/12/08-14:17 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- Started SpringbootvueempApplication in 2.87 seconds (JVM running for 4.786)
+2018/12/08-14:17 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018/12/08-14:17 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2018/12/08-14:17 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 16 ms
+2018/12/08-14:17 [http-nio-8080-exec-3] INFO  com.alibaba.druid.pool.DruidDataSource- {dataSource-1} inited
+2018/12/08-14:17 [http-nio-8080-exec-3] DEBUG com.aaa.dao.UserInfoDao.addUser- ==>  Preparing: insert into emp values(null,?,?,?,?,?,?,?) 
+2018/12/08-14:17 [http-nio-8080-exec-3] DEBUG com.aaa.dao.UserInfoDao.addUser- ==> Parameters: wangwu(String), jingli(String), 1(Integer), 2018-11-08 00:00:00.0(Timestamp), 3000(Integer), 3000(Integer), 1(Integer)
+2018/12/08-14:17 [http-nio-8080-exec-3] DEBUG com.aaa.dao.UserInfoDao.addUser- <==    Updates: 1
+2018/12/08-14:17 [http-nio-8080-exec-4] DEBUG com.aaa.dao.UserInfoDao.findAllUser- ==>  Preparing: select empno,ename,job,mgr,hiredate,sal,comm,deptno from emp 
+2018/12/08-14:17 [http-nio-8080-exec-4] DEBUG com.aaa.dao.UserInfoDao.findAllUser- ==> Parameters: 
+2018/12/08-14:17 [http-nio-8080-exec-4] DEBUG com.aaa.dao.UserInfoDao.findAllUser- <==      Total: 3
+2018/12/08-14:19 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- Starting SpringbootvueempApplication on PC-20180810PAHZ with PID 7804 (D:\IDEA\IDEASpace\springbootvueemp\target\classes started by Administrator in D:\IDEA\IDEASpace\springbootvueemp)
+2018/12/08-14:19 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- No active profile set, falling back to default profiles: default
+2018/12/08-14:19 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor- Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018/12/08-14:19 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor- For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018/12/08-14:19 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2018/12/08-14:19 [restartedMain] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2018/12/08-14:19 [restartedMain] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet Engine: Apache Tomcat/9.0.13
+2018/12/08-14:19 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener- The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\jdk1.8\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\app\Administrator\product\11.1.0\db_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;E:\jdk1.7\bin;E:\Program Files\TortoiseSVN\bin;E:\Program Files\VisualSVN Server\bin\;D:\Bin;E:\软件\Dict;E:\ZYH\Maven\apache-maven-3.3.9\bin;D:\命令行打开应用程序;.]
+2018/12/08-14:19 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2018/12/08-14:19 [restartedMain] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1716 ms
+2018/12/08-14:19 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2018/12/08-14:19 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer- LiveReload server is running on port 35729
+2018/12/08-14:19 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2018/12/08-14:19 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- Started SpringbootvueempApplication in 3.151 seconds (JVM running for 4.461)
+2018/12/08-14:19 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018/12/08-14:19 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2018/12/08-14:19 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 15 ms
+2018/12/08-14:19 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource- {dataSource-1} inited
+2018/12/08-14:19 [http-nio-8080-exec-1] DEBUG com.aaa.dao.UserInfoDao.addUser- ==>  Preparing: insert into emp values(null,?,?,?,?,?,?,?) 
+2018/12/08-14:19 [http-nio-8080-exec-1] DEBUG com.aaa.dao.UserInfoDao.addUser- ==> Parameters: wangwu(String), jingli(String), 1(Integer), 2018-11-08 00:00:00.0(Timestamp), 3000(Integer), 3000(Integer), 1(Integer)
+2018/12/08-14:19 [http-nio-8080-exec-1] DEBUG com.aaa.dao.UserInfoDao.addUser- <==    Updates: 1
+2018/12/08-14:19 [http-nio-8080-exec-3] DEBUG com.aaa.dao.UserInfoDao.findAllUser- ==>  Preparing: select empno,ename,job,mgr,hiredate,sal,comm,deptno from emp 
+2018/12/08-14:19 [http-nio-8080-exec-3] DEBUG com.aaa.dao.UserInfoDao.findAllUser- ==> Parameters: 
+2018/12/08-14:19 [http-nio-8080-exec-3] DEBUG com.aaa.dao.UserInfoDao.findAllUser- <==      Total: 4
+2018/12/08-14:20 [http-nio-8080-exec-2] DEBUG com.aaa.dao.UserInfoDao.findAllUser- ==>  Preparing: select empno,ename,job,mgr,hiredate,sal,comm,deptno from emp 
+2018/12/08-14:20 [http-nio-8080-exec-2] DEBUG com.aaa.dao.UserInfoDao.findAllUser- ==> Parameters: 
+2018/12/08-14:20 [http-nio-8080-exec-2] DEBUG com.aaa.dao.UserInfoDao.findAllUser- <==      Total: 4
+2018/12/08-14:20 [http-nio-8080-exec-6] DEBUG com.aaa.dao.UserInfoDao.addUser- ==>  Preparing: insert into emp values(null,?,?,?,?,?,?,?) 
+2018/12/08-14:20 [http-nio-8080-exec-6] DEBUG com.aaa.dao.UserInfoDao.addUser- ==> Parameters: wuaang(String), daa(String), 1(Integer), 2018-11-08 00:00:00.0(Timestamp), 3000(Integer), 3000(Integer), 1(Integer)
+2018/12/08-14:20 [http-nio-8080-exec-6] DEBUG com.aaa.dao.UserInfoDao.addUser- <==    Updates: 1
+2018/12/08-14:20 [http-nio-8080-exec-8] DEBUG com.aaa.dao.UserInfoDao.findAllUser- ==>  Preparing: select empno,ename,job,mgr,hiredate,sal,comm,deptno from emp 
+2018/12/08-14:20 [http-nio-8080-exec-8] DEBUG com.aaa.dao.UserInfoDao.findAllUser- ==> Parameters: 
+2018/12/08-14:20 [http-nio-8080-exec-8] DEBUG com.aaa.dao.UserInfoDao.findAllUser- <==      Total: 5
+2018/12/08-14:29 [Thread-12] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Shutting down ExecutorService 'applicationTaskExecutor'
+2018/12/08-14:29 [Thread-12] INFO  com.alibaba.druid.pool.DruidDataSource- {dataSource-1} closed
+2018/12/08-14:29 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- Starting SpringbootvueempApplication on PC-20180810PAHZ with PID 7804 (D:\IDEA\IDEASpace\springbootvueemp\target\classes started by Administrator in D:\IDEA\IDEASpace\springbootvueemp)
+2018/12/08-14:29 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- No active profile set, falling back to default profiles: default
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2018/12/08-14:29 [restartedMain] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2018/12/08-14:29 [restartedMain] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet Engine: Apache Tomcat/9.0.13
+2018/12/08-14:29 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 343 ms
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer- LiveReload server is running on port 35729
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2018/12/08-14:29 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- Started SpringbootvueempApplication in 0.608 seconds (JVM running for 607.588)
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener- Condition evaluation unchanged
+2018/12/08-14:29 [Thread-21] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Shutting down ExecutorService 'applicationTaskExecutor'
+2018/12/08-14:29 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- Starting SpringbootvueempApplication on PC-20180810PAHZ with PID 7804 (D:\IDEA\IDEASpace\springbootvueemp\target\classes started by Administrator in D:\IDEA\IDEASpace\springbootvueemp)
+2018/12/08-14:29 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- No active profile set, falling back to default profiles: default
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2018/12/08-14:29 [restartedMain] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2018/12/08-14:29 [restartedMain] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet Engine: Apache Tomcat/9.0.13
+2018/12/08-14:29 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 312 ms
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer- LiveReload server is running on port 35729
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2018/12/08-14:29 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- Started SpringbootvueempApplication in 0.53 seconds (JVM running for 624.462)
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener- Condition evaluation unchanged
+2018/12/08-14:29 [Thread-27] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Shutting down ExecutorService 'applicationTaskExecutor'
+2018/12/08-14:29 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- Starting SpringbootvueempApplication on PC-20180810PAHZ with PID 7804 (D:\IDEA\IDEASpace\springbootvueemp\target\classes started by Administrator in D:\IDEA\IDEASpace\springbootvueemp)
+2018/12/08-14:29 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- No active profile set, falling back to default profiles: default
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2018/12/08-14:29 [restartedMain] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2018/12/08-14:29 [restartedMain] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet Engine: Apache Tomcat/9.0.13
+2018/12/08-14:29 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 281 ms
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer- LiveReload server is running on port 35729
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2018/12/08-14:29 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- Started SpringbootvueempApplication in 0.53 seconds (JVM running for 645.83)
+2018/12/08-14:29 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener- Condition evaluation unchanged
+2018/12/08-14:31 [Thread-33] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Shutting down ExecutorService 'applicationTaskExecutor'
+2018/12/08-14:31 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- Starting SpringbootvueempApplication on PC-20180810PAHZ with PID 7804 (D:\IDEA\IDEASpace\springbootvueemp\target\classes started by Administrator in D:\IDEA\IDEASpace\springbootvueemp)
+2018/12/08-14:31 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- No active profile set, falling back to default profiles: default
+2018/12/08-14:31 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2018/12/08-14:31 [restartedMain] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2018/12/08-14:31 [restartedMain] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet Engine: Apache Tomcat/9.0.13
+2018/12/08-14:31 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2018/12/08-14:31 [restartedMain] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 281 ms
+2018/12/08-14:31 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2018/12/08-14:31 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer- LiveReload server is running on port 35729
+2018/12/08-14:31 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2018/12/08-14:31 [restartedMain] INFO  com.aaa.SpringbootvueempApplication- Started SpringbootvueempApplication in 0.499 seconds (JVM running for 729.154)
+2018/12/08-14:31 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener- Condition evaluation unchanged

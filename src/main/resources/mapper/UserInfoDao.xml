@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间指向dao接口 -->
+<mapper namespace="com.aaa.dao.UserInfoDao">
+	<!-- 定义公用sql代码段 -->
+	<sql id="mySqlStatment">
+		empno,ename,job,mgr,hiredate,sal,comm,deptno
+    </sql>
+	<!-- 使用resultType的时候，要求返回值的列名必须跟实体类中的属性名保持一致 -->
+	<select id="findAllUser"  resultType="userinfo">
+		select <include refid="mySqlStatment"></include> from emp
+	</select>
+	<insert id="addUser" parameterType="userinfo">
+		insert into emp values(null,#{ename},#{job},#{mgr},#{hiredate},#{sal},#{comm},#{deptno})
+	</insert>
+</mapper>

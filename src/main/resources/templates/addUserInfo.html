@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--ajax方式请求后台-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+    <form action="/userinfo/addUser" method="post">
+        员工姓名：<input type="text" name="ename"/>
+        职位：<input type="text" name="job"/>
+        xxx：<input type="text" name="mgr"/>
+        入职时间：<input type="text" name="hiredate"/>
+        工资：<input type="text" name="sal"/>
+        奖金：<input type="text" name="comm"/>
+        部门：<input type="text" name="deptno"/>
+        <button type="submit">添加</button>
+    </form>
+</body>
+</html>
